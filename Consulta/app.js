@@ -12,16 +12,16 @@ const LogIn = document.getElementById('LogIn')
 
 LogIn.addEventListener('click',user)
 
-function user(){
-
     let saveNewusername = Newusername.value
     let saveNewpassword = Newpassword.value
     let saveName = NewnameU.value
 
+function user(){
+
     const object = {
-        username:saveNewusername,
-        password:saveNewpassword,
-        name:saveName
+        username: saveNewusername,
+        password: saveNewpassword,
+        name: saveName
     }
 
     newUser(object)
@@ -29,8 +29,14 @@ function user(){
 
 function newUser(object){
 
-    const newUrl = fetch('POST','https://backend-edw.herokuapp.com/usuario')
+    let newObject = JSON.stringify(object)
 
-    console.log(object);
+    fetch('https://backend-edw.herokuapp.com/usuario',{
+        method: 'POST',
+        body: newObject,
+        headers:{
+            "Content-type": "application/json"
+        }
+    })
 
 }

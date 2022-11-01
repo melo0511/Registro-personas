@@ -27,4 +27,10 @@ main{
 input{
     width: 30%;
     height: 2rem;
+    text-align: center;
+}
+
+#LogIn{
+    width: 8%;
+    height: 1.5rem;
 }
